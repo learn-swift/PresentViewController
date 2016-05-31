@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AddViewControllerProtocol {
-	func addedData(status: Bool)
+	func addedData()
 }
 
 class AddViewController: UIViewController {
@@ -26,8 +26,8 @@ class AddViewController: UIViewController {
 	}
 	
 	@IBAction func handleSaveAction(sender: AnyObject) {
-		let isSaved = MyService.shared.save(txtInput.text)
-		delegate?.addedData(isSaved)
+		MyService.shared.save(txtInput.text)
+		delegate?.addedData()
 		self.dismissViewControllerAnimated(true, completion: nil)
 	}
 }

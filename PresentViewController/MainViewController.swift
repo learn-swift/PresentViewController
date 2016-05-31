@@ -37,10 +37,8 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: AddViewControllerProtocol {
-	func addedData(status: Bool) {
-		if status == true {
-			loadData()
-			print("Đã load lại dữ liệu")
-		}
+	func addedData() {
+		loadData()
+		print("Đã load lại dữ liệu")
 	}
 }
